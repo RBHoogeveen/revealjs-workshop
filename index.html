@@ -15,81 +15,48 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section><!--SPEAKER VIEW SLIDES-->
-					<section>
-						The Speaker View function allows presenters to keep notes to themselves
-						<aside class="notes">
-							Notes in the main slide
-						</aside>
-					</section>
-					<section>
-						You can keep notes in the presenter tab like this
-						<pre>
-							<code data-trim data-line-numbers="0|3-5">
-								<script type="text/template">
-									<section>
-										"The Speaker View function allows presenters to keep notes to themselves"
-										<aside class="notes">
-											Notes in the main slide
-										</aside>
-									</section>
-								</script>
-							</code>
-						</pre>
-					</section>
-					<section>
-						<img src="assets/images/SpeakerView.PNG"/>
-					</section>
+				<section>
+						Before cloning the repository, make sure you already install NodeJS (10.0.0), then checkout your branch
+					<pre><code data-trim data-noescape>
+						$ git clone git@github.com:RBHoogeveen/revealjs-workshop.git
+						$ git checkout groups/group-{your-group-number}
+						  </code></pre>
 				</section>
-				<section><!--API SLIDES-->
-					<section>APIs</section>
-					<section>Reveal.js allows the use of APIs to interface with your presentations</section>
-					<section>The presentation is accessed though the global <code>Reveal</code> object
-						<pre>
-							<code>
-// Navigate to a specific slide
-Reveal.slide( indexh, indexv, indexf );
-
-// Relative navigation
-Reveal.left();
-Reveal.right();
-Reveal.up();
-Reveal.down();
-Reveal.prev();
-Reveal.next();
-
-// Fragment navigation
-Reveal.prevFragment();
-Reveal.nextFragment();
-
-// Checks which directions we can navigate towards
-// {top: false, right: true, bottom: false, left: false}
-Reveal.availableRoutes();
-							</code>
-						</pre>
-							
-					</section>
+				<section>
+					Go to the project's folder and install packages needed. This might take a bit! :)
+					<pre><code data-trim data-noescape>
+						$ cd revealjs-workshop && npm i
+						</code></pre>
+				</section>
+				<section>
+					Start your application and view your slides at http://localhost:8080
+					<pre><code data-trim data-noescape>
+						npm start
+							</code></pre>			  
+				</section>
+				<section>
+					For documentation, you can find it at https://revealjs.com.
 				</section>
 			</div>
 		</div>
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/zoom/zoom.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/search/search.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// Also available as an ES module, see:
-			// https://revealjs.com/initialization/
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				center: true,
-				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
-			});
-		</script>
 	</body>
+	<script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+	<script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // Also available as an ES module, see:
+        // https://revealjs.com/initialization/
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+        });
+    </script>
 </html>
