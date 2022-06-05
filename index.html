@@ -14,7 +14,49 @@
 
 	<body>
 		<div class="reveal">
-
+			<div class="slides">
+				<section>
+						Before cloning the repository, make sure you already install NodeJS (10.0.0), then checkout your branch
+					<pre><code data-trim data-noescape>
+						$ git clone git@github.com:RBHoogeveen/revealjs-workshop.git
+						$ git checkout groups/group-{your-group-number}
+						  </code></pre>
+				</section>
+				<section>
+					Go to the project's folder and install packages needed. This might take a bit! :)
+					<pre><code data-trim data-noescape>
+						$ cd revealjs-workshop && npm i
+						</code></pre>
+				</section>
+				<section>
+					Start your application and view your slides at http://localhost:8080
+					<pre><code data-trim data-noescape>
+						npm start
+							</code></pre>			  
+				</section>
+				<section>
+					For documentation, you can find it at https://revealjs.com.
+				</section>
+			</div>
 		</div>
 	</body>
+	<script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+	<script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // Also available as an ES module, see:
+        // https://revealjs.com/initialization/
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+        });
+    </script>
 </html>
