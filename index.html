@@ -15,48 +15,401 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
-						Before cloning the repository, make sure you already install NodeJS (10.0.0), then checkout your branch
-					<pre><code data-trim data-noescape>
-						$ git clone git@github.com:RBHoogeveen/revealjs-workshop.git
-						$ git checkout groups/group-{your-group-number}
-						  </code></pre>
+				<!-- General info -->
+				<section data-background-image="assets/images/background.svg">
+					<h1>Reveal.js Workshop</h1>
+					<!--  Maybe use later ---  <p> Presenting just got a whole lot easier</p>-->
+					Presentation
 				</section>
-				<section>
-					Go to the project's folder and install packages needed. This might take a bit! :)
-					<pre><code data-trim data-noescape>
-						$ cd revealjs-workshop && npm i
+
+				<section data-background-image="assets/images/background.svg">
+						<a href="https://revealjs.com">
+								<img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+						</a>
+						<p> Presenting just got a whole lot easier </p>
+				</section>
+
+				<section data-background-image="assets/images/background.svg">
+						<h2> Hakim El Hattab </h2>
+						<p>
+								Project started and maintained by Hakim with help from the community.
+						</p>
+				</section>
+
+				<section data-background-image="assets/images/background.svg">
+					<h2> Quick , Simple , Effective</h2>
+				</section>
+				<section data-background-image="assets/images/background.svg" data-transition="slide-in fade-out">
+					And the best part
+				</section>
+				<section data-background-image="assets/images/background.svg" data-transition="fade-in slide-out">
+					IT'S ALL FREE
+				</section>
+
+				<section data-background-image="assets/images/background.svg" style="top: -149px; display: block;">
+					<h2>Features</h2>
+					<ol>
+						<li>
+							Fragments
+						</li>
+						<li>
+							Code blocks + Vertical Slides
+						</li>
+						<li>
+							Animation
+						</li>
+						<li>
+							Overview, Links
+						</li>
+						<li>
+							Speaker View
+						</li>
+					</ol>
+				</section>
+				<section data-background-image="assets/images/background.svg">
+					Let's get started
+				</section>
+				<!-- Fragments -->
+				<section data-background-image="assets/images/background.svg">
+					<h2>Fragments</h2>
+					<p style="font-size: 24px">
+						Fragments are used to highlight or incrementally reveal individual elements on a slide. Every
+						element with the class fragment will be stepped through before moving on to the next slide.
+						<br>The default fragment style is to start out invisible and fade in. This style can be changed by
+						appending a different class to the fragment.
+					</p>
+					
+					<p class="fragment">Fade in</p>
+					<p class="fragment fade-out">Fade out</p>
+					<p class="fragment highlight-red">Highlight red</p>
+					<p class="fragment fade-in-then-out">Fade in, then out</p>
+					<p class="fragment fade-up">Slide up while fading in</p>
+					<p class="fragment strike">Strike through</p>
+				</section>
+				<section data-background-image="assets/images/background.svg">
+					<h2>Nested Fragments</h2>
+					<p style="font-size: 29px">
+						Multiple fragments can be applied to the same element sequentially by wrapping it, this will fade in
+						the text on the first step, turn it red on the second and fade out on the third.
+					</p>
+					<span class="fragment fade-in">
+						<span class="fragment highlight-red">
+							<span class="fragment fade-out">
+								Fade in > Turn red > Fade out
+							</span>
+						</span>
+					</span>
+				</section>
+				<section data-background-image="assets/images/background.svg">
+					<section>
+						<h2>Fragments order</h2>
+						<p style="font-size: 29px">
+							By default fragments will be stepped through in the order that they appear in the DOM. This display order can be changed using the data-fragment-index attribute. Note that multiple elements can appear at the same index.
+						</p>
+						<p class="fragment" data-fragment-index="3">Appears last</p>
+						<p class="fragment" data-fragment-index="1">Appears first</p>
+						<p class="fragment" data-fragment-index="2">Appears second</p>
+					</section>
+
+					<!-- Code block -->
+					<section>
+						<pre><code style="overflow: hidden;" data-line-numbers="2-8|10-17|19-22">
+	<h2>Fragments</h2>
+	<p class="fragment">Fade in</p>
+	<p class="fragment fade-out">Fade out</p>
+	<p class="fragment highlight-red">Highlight red</p>
+	<p class="fragment fade-in-then-out">Fade in, then out</p>
+	<p class="fragment fade-up">Slide up while fading in</p>
+	<p class="fragment strike">Strike through</p>
+
+	<h2>Nested Fragments</h2>
+	<span class="fragment fade-in">
+		<span class="fragment highlight-red">
+			<span class="fragment fade-out">
+				Fade in > Turn red > Fade out
+			</span>
+		</span>
+	</span>
+
+	<h2>Fragments order</h2>
+	<p class="fragment" data-fragment-index="3">Appears last</p>
+	<p class="fragment" data-fragment-index="1">Appears first</p>
+	<p class="fragment" data-fragment-index="2">Appears second</p>
 						</code></pre>
+					</section>
+					<section>
+						<pre><code data-line-numbers>
+	<section>
+		<p>This is your horizontal slide</p>
+		<section>
+			<p>This is your first vertical slide</p>
+			<section>
+				<p>This is your second vertical slide</p>
+			</section>	
+		</section>
+	</section>
+						</code></pre>
+					</section>
+					<section>
+						<pre><code data-line-numbers>
+	<pre><code data-line-numbers="2,8-10|8-13" >
+		<p>The code you want to show goes here</p>
+	</code></pre>
+						</code></pre>
+					</section>
 				</section>
-				<section>
-					Start your application and view your slides at http://localhost:8080
-					<pre><code data-trim data-noescape>
-						npm start
-							</code></pre>			  
+
+				<!-- Auto animate -->
+				<section data-background-image="assets/images/background.svg" data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Auto-Animate</h3>
+					<p>Smooth animations for anything on the screen</p>
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						<section data-auto-animate data-auto-animate-unmatched="fade">
+							<h3>Auto-Animate</h3>
+							<p>Move things on the screen smoothly</p>
+						</section>
+					</code></pre>
 				</section>
-				<section>
-					For documentation, you can find it at https://revealjs.com.
+				<section data-background-image="assets/images/background.svg" data-auto-animate data-auto-animate-unmatched="fade">
+					<h3 style="margin-top: 10px;">Auto-Animate</h3>
+					<p style="margin-top: 50px;">Smooth animations for anything on the screen</p>
+					<p>This element is unmatched</p>
+					<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+						function Example() {
+							<h3>Auto-Animate</h3>
+							<p style="margin-top: 100px;">Smooth animations for anything on the screen</p>
+							<p>This element is unmatched</p>
+					</code></pre>
 				</section>
+
+				<section data-background-image="assets/images/background.svg" data-auto-animate>
+					<p data-id="text-props" style="background: #555; line-height: 1em; letter-spacing: 0em;">Line Height & Letter Spacing</p>
+					<pre data-id="code2"><code data-line-numbers class="hljs" data-trim>
+						<p data-id="text-props" style="background: #555; 
+						line-height: 1em; 
+						letter-spacing: 0em;">Line Height & Letter Spacing</p>
+						}
+					</code></pre>
+				</section>
+				<section data-background-image="assets/images/background.svg" data-auto-animate>
+					<p data-id="text-props" style="background: #555; line-height: 3em; letter-spacing: 0.2em;">Line Height & Letter Spacing</p>
+					<pre data-id="code2"><code data-line-numbers class="hljs" data-trim>
+						<p data-id="text-props" style="background: #555; 
+						line-height: 3em; 
+						letter-spacing: 0.2em;">Line Height & Letter Spacing</p>
+					</code></pre>
+				</section>
+
+				<section data-background-image="assets/images/background.svg">
+					<section data-auto-animate>
+						<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+							void JustStudyLol() {
+							  //Insert study method here
+							}
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+							void JustStudyLol() {
+								While(myGrades < expected){
+									JustStudyLol();
+								}
+							}
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+							void JustStudyLol() {
+								//it's not working HELP!
+								While(myGrades < expected){
+									JustStudyLol();
+								}
+							}
+						</code></pre>
+					</section>
+				</section>
+
+				<section data-background-image="assets/images/background.svg">
+					<section data-auto-animate>
+						<h3>It works even in a list</h3>
+						<ul>
+							<li style="color: red;">Red</li>
+							<li style="color: blue;">Blue</li>
+							<li style="color: green;">Green</li>
+						</ul>
+						<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+							<ul>
+								<li style="color: red;">Red</li>
+								<li style="color: blue;">Blue</li>
+								<li style="color: green;">Green</li>
+							</ul>
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<ul>
+							<li style="color: green;">Blue</li>
+							<li style="color: blue;">Red</li>
+							<li style="color: red;">Green</li>
+						</ul>
+						<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+							<ul>
+								<li style="color: green;">Blue</li>
+								<li style="color: blue;">Red</li>
+								<li style="color: red;">Green</li>
+							</ul>
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<ul>
+							<li style="color: blue;">Green</li>
+							<li style="color: green;">Red</li>
+							<li style="color: red;">Blue</li>
+						</ul>
+						<pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+							<ul>
+								<li style="color: blue;">Green</li>
+								<li style="color: green;">Red</li>
+								<li style="color: red;">Blue</li>
+							</ul>
+						</code></pre>
+					</section>
+				</section>
+
+				<section data-background-image="assets/images/background.svg" data-auto-animate style="height: 600px">
+					<h3 style="opacity: 0.3; font-size: 18px;">SLIDE 1</h3>
+					<h2 data-id="title" style="margin-top: 260px;">Animate Anything</h2>
+					<div data-id="1" style="background: white; position: absolute; top: 150px; left: 16%; width: 60px; height: 60px;"></div>
+					<div data-id="2" style="background: white; position: absolute; top: 150px; left: 36%; width: 60px; height: 60px;"></div>
+					<div data-id="3" style="background: white; position: absolute; top: 150px; left: 56%; width: 60px; height: 60px;"></div>
+					<div data-id="4" style="background: white; position: absolute; top: 150px; left: 76%; width: 60px; height: 60px;"></div>
+				</section>
+				<section data-background-image="assets/images/background.svg" data-auto-animate style="height: 600px">
+					<h3 style="opacity: 0.3; font-size: 18px;">SLIDE 2</h3>
+					<h2 data-id="title" style="margin-top: 500px">With Auto Animate</h2>
+					<div data-id="1" style="background: cyan; position: absolute; bottom: 190px; left: 16%; width: 60px; height: 60px;"></div>
+					<div data-id="2" style="background: magenta; position: absolute; bottom: 190px; left: 36%; width: 60px; height: 160px;"></div>
+					<div data-id="3" style="background: yellow; position: absolute; bottom: 190px; left: 56%; width: 60px; height: 260px;"></div>
+					<div data-id="4" style="background: red; position: absolute; bottom: 190px; left: 76%; width: 60px; height: 360px;"></div>
+				</section>
+				<section data-background-image="assets/images/background.svg" data-auto-animate style="height: 600px">
+					<h3 style="opacity: 0.3; font-size: 18px;">SLIDE 3</h3>
+					<h2 data-id="title" style="margin-top: 500px; opacity: 0;">With Auto Animate</h2>
+					<div data-id="1" style="background: cyan; position: absolute; top: 50%; left: 50%; width: 400px; height: 400px; margin: -200px 0 0 -200px; border-radius: 400px;"></div>
+					<div data-id="2" style="background: magenta; position: absolute; top: 50%; left: 50%; width: 300px; height: 300px; margin: -150px 0 0 -150px; border-radius: 400px;"></div>
+					<div data-id="3" style="background: yellow; position: absolute; top: 50%; left: 50%; width: 200px; height: 200px; margin: -100px 0 0 -100px; border-radius: 400px;"></div>
+					<div data-id="4" style="background: red; position: absolute; top: 50%; left: 50%; width: 100px; height: 100px; margin: -50px 0 0 -50px; border-radius: 400px;"></div>
+				</section>
+				<section data-background-image="assets/images/background.svg" data-auto-animate style="height: 600px">
+					<h3 style="opacity: 0.3; font-size: 18px;">SLIDE 3</h3>
+					<h2 data-id="title" style="margin-top: 500px; opacity: 0;">With Auto Animate</h2>
+					<div data-id="1" style="background: red; position: absolute; top: 250px; left: 16%; width: 60px; height: 60px;"></div>
+					<div data-id="2" style="background: yellow; position: absolute; top: 250px; left: 36%; width: 60px; height: 60px;"></div>
+					<div data-id="3" style="background: magenta; position: absolute; top: 250px; left: 56%; width: 60px; height: 60px;"></div>
+					<div data-id="4" style="background: cyan; position: absolute; top: 250px; left: 76%; width: 60px; height: 60px;"></div>
+				</section>
+
+				
+				<!--SPEAKER VIEW SLIDES-->
+				<section data-background-image="assets/images/background.svg">
+					<section data-background-image="assets/images/background.svg">
+						The Speaker View function allows presenters to keep notes to themselves
+						<aside class="notes">
+							Notes in the main slide
+						</aside>
+					</section>
+					<section data-background-image="assets/images/background.svg">
+						You can keep notes in the presenter tab like this
+						<pre>
+							<code data-trim data-line-numbers="0|3-5">
+								<script type="text/template">
+									<section>
+										"The Speaker View function allows presenters to keep notes to themselves"
+										<aside class="notes">
+											Notes in the main slide
+										</aside>
+									</section>
+								</script>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<img src="assets/images/SpeakerView.PNG"/>
+					</section>
+				</section>
+
+				<!--API SLIDES-->
+				<section data-background-image="assets/images/background.svg">
+				<section>APIs</section>
+				<section>Reveal.js allows the use of APIs to interface with your presentations</section>
+				<section>The presentation is accessed though the global <code>Reveal</code> object
+					<pre>
+						<code>
+// Navigate to a specific slide
+Reveal.slide( indexh, indexv, indexf );
+
+// Relative navigation
+Reveal.left();
+Reveal.right();
+Reveal.up();
+Reveal.down();
+Reveal.prev();
+Reveal.next();
+
+// Fragment navigation
+Reveal.prevFragment();
+Reveal.nextFragment();
+
+// Checks which directions we can navigate towards
+// {top: false, right: true, bottom: false, left: false}
+Reveal.availableRoutes();
+						</code>
+					</pre>
+				</section>
+			</section>
+
+			<!-- End instructions -->
+			<section data-background-image="assets/images/background.svg">
+				Before cloning the repository, make sure you already install NodeJS (10.0.0), then checkout your branch
+				<pre><code data-trim data-noescape>
+					$ git clone git@github.com:RBHoogeveen/revealjs-workshop.git
+					$ git checkout groups/group-{your-group-number}
+				</code></pre>
+			</section>
+			<section data-background-image="assets/images/background.svg">
+				Go to the project's folder and install packages needed. This might take a bit! :)
+				<pre><code data-trim data-noescape>
+					$ cd revealjs-workshop && npm i
+				</code></pre>
+			</section>
+			<section data-background-image="assets/images/background.svg">
+				Start your application and view your slides at http://localhost:8080
+				<pre><code data-trim data-noescape>
+					npm start
+				</code></pre>              
+			</section>
+			<section data-background-image="assets/images/background.svg">
+				For documentation, you can find it at https://revealjs.com.
+			</section>
 			</div>
 		</div>
 	</body>
 	<script src="dist/reveal.js"></script>
-    <script src="plugin/zoom/zoom.js"></script>
-    <script src="plugin/notes/notes.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/notes/notes.js"></script>
 	<script src="plugin/search/search.js"></script>
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
-    <script>
-        // Also available as an ES module, see:
-        // https://revealjs.com/initialization/
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            center: true,
-            hash: true,
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
 
-            // Learn about plugins: https://revealjs.com/plugins/
-            plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
-        });
-    </script>
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+		});
+	</script>
 </html>
